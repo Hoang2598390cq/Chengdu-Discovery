@@ -483,6 +483,43 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .tour-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .tour-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.8);
+        }
+
+        .tour-image::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.2);
+            z-index: 1;
+            }
+
+        .tour-image > *:not(img) {
+            position: relative;
+            z-index: 2;
+            }
+
     </style>
 </head>
 <body>
@@ -518,83 +555,101 @@
                 <h2 class="section-title">Our Featured Tours</h2>
                 <div class="tour-grid">
                     <div class="tour-card">
-                        <div class="tour-image" style="background-image: url('images/panda.jpg')">🐼</div>
-                        <div class="tour-content">
-                            <h3>Panda Base & Tea Culture Day Tour</h3>
-                            <p>Visit the famous Giant Panda Research Base and experience traditional Sichuan tea culture in authentic teahouses.</p>
-                            <div class="tour-details">
-                                <span class="duration">8 Hours</span>
-                                <span class="price">$89</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Panda Base & Tea Culture Day Tour')">Book Now</button>
+                      <div class="tour-image">
+                        🐼
+                        <img class="lazy" data-src="images/panda.jpg" alt="Panda Tour">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Panda Base & Tea Culture Day Tour</h3>
+                        <p>Visit the famous Giant Panda Research Base and experience traditional Sichuan tea culture in authentic teahouses.</p>
+                        <div class="tour-details">
+                          <span class="duration">8 Hours</span>
+                          <span class="price">$89</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Panda Base & Tea Culture Day Tour')">Book Now</button>
+                      </div>
                     </div>
                     
                     <div class="tour-card">
-                        <div class="tour-image" style="background-image: url('images/food.jpg')"🌶️</div>
-                        <div class="tour-content">
-                            <h3>Sichuan Cuisine Food Tour</h3>
-                            <p>Taste authentic Sichuan dishes, visit local markets, and learn cooking secrets from expert chefs.</p>
-                            <div class="tour-details">
-                                <span class="duration">6 Hours</span>
-                                <span class="price">$75</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Sichuan Cuisine Food Tour')">Book Now</button>
+                      <div class="tour-image">
+                        🌶️
+                        <img class="lazy" data-src="images/food.jpg" alt="Sichuan Cuisine">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Sichuan Cuisine Food Tour</h3>
+                        <p>Taste authentic Sichuan dishes, visit local markets, and learn cooking secrets from expert chefs.</p>
+                        <div class="tour-details">
+                          <span class="duration">6 Hours</span>
+                          <span class="price">$75</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Sichuan Cuisine Food Tour')">Book Now</button>
+                      </div>
                     </div>
                     
                     <div class="tour-card">
-                         <div class="tour-image" style="background-image: url('images/jinli.jpg')">🏛️</div>
-                        <div class="tour-content">
-                            <h3>Ancient Sichuan Culture Tour</h3>
-                            <p>Explore Jinli Ancient Street, Wuhou Shrine, and discover the rich history of ancient Sichuan civilization.</p>
-                            <div class="tour-details">
-                                <span class="duration">7 Hours</span>
-                                <span class="price">$68</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Ancient Sichuan Culture Tour')">Book Now</button>
+                      <div class="tour-image">
+                        🏛️
+                        <img class="lazy" data-src="images/jinli.jpg" alt="Ancient Culture">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Ancient Sichuan Culture Tour</h3>
+                        <p>Explore Jinli Ancient Street, Wuhou Shrine, and discover the rich history of ancient Sichuan civilization.</p>
+                        <div class="tour-details">
+                          <span class="duration">7 Hours</span>
+                          <span class="price">$68</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Ancient Sichuan Culture Tour')">Book Now</button>
+                      </div>
                     </div>
                     
                     <div class="tour-card">
-                        <div class="tour-image" style="background-image: url('images/opera.jpg')">🎭</div>
-                        <div class="tour-content">
-                            <h3>Face Changing & Local Life Tour</h3>
-                            <p>Experience Sichuan Opera face-changing performance and explore local neighborhoods with insider access.</p>
-                            <div class="tour-details">
-                                <span class="duration">5 Hours</span>
-                                <span class="price">$95</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Face Changing & Local Life Tour')">Book Now</button>
+                      <div class="tour-image">
+                        🎭
+                        <img class="lazy" data-src="images/opera.jpg" alt="Opera Tour">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Face Changing & Local Life Tour</h3>
+                        <p>Experience Sichuan Opera face-changing performance and explore local neighborhoods with insider access.</p>
+                        <div class="tour-details">
+                          <span class="duration">5 Hours</span>
+                          <span class="price">$95</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Face Changing & Local Life Tour')">Book Now</button>
+                      </div>
                     </div>
                     
                     <div class="tour-card">
-                       <div class="tour-image" style="background-image: url('images/charter.jpg')">🚗</div>
-                        <div class="tour-content">
-                            <h3>Private Charter Service</h3>
-                            <p>Customize your own itinerary with our private vehicle and professional English-speaking guide.</p>
-                            <div class="tour-details">
-                                <span class="duration">Full Day</span>
-                                <span class="price">$150</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Private Charter Service')">Book Now</button>
+                      <div class="tour-image">
+                        🚗
+                        <img class="lazy" data-src="images/charter.jpg" alt="Charter Service">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Private Charter Service</h3>
+                        <p>Customize your own itinerary with our private vehicle and professional English-speaking guide.</p>
+                        <div class="tour-details">
+                          <span class="duration">Full Day</span>
+                          <span class="price">$150</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Private Charter Service')">Book Now</button>
+                      </div>
                     </div>
                     
                     <div class="tour-card">
-                       <div class="tour-image" style="background-image: url('images/leshan.jpg')">🏔️</div>
-                        <div class="tour-content">
-                            <h3>Mount Emei & Leshan Buddha</h3>
-                            <p>2-day tour to UNESCO World Heritage sites including the Giant Buddha and sacred Buddhist mountain.</p>
-                            <div class="tour-details">
-                                <span class="duration">2 Days</span>
-                                <span class="price">$280</span>
-                            </div>
-                            <button class="book-button" onclick="openBooking('Mount Emei & Leshan Buddha')">Book Now</button>
+                      <div class="tour-image">
+                        🏔️
+                        <img class="lazy" data-src="images/leshan.jpg" alt="Leshan Buddha">
+                      </div>
+                      <div class="tour-content">
+                        <h3>Mount Emei & Leshan Buddha</h3>
+                        <p>2-day tour to UNESCO World Heritage sites including the Giant Buddha and sacred Buddhist mountain.</p>
+                        <div class="tour-details">
+                          <span class="duration">2 Days</span>
+                          <span class="price">$280</span>
                         </div>
+                        <button class="book-button" onclick="openBooking('Mount Emei & Leshan Buddha')">Book Now</button>
+                      </div>
                     </div>
-                </div>
+
             </div>
         </section>
         
